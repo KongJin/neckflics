@@ -9,6 +9,7 @@ const Header = styled.header`
   left: 0;
   top: 0;
   height: 50px;
+  background-color: #2d2827;
 `;
 const Ul = styled.ul`
   display: flex;

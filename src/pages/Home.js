@@ -20,10 +20,10 @@ const Home = () => {
 
   return (
     <>
-      <Grid url={popular}></Grid>
-      <Grid url={upcoming}></Grid>
-      <Grid url={nowplaying}></Grid>
-      <Grid url={toprated}></Grid>
+      <Grid data={popular} title="Popular"></Grid>
+      <Grid data={upcoming} title="Upcoming"></Grid>
+      <Grid data={nowplaying} title="Now Playing"></Grid>
+      <Grid data={toprated} title="Top Rated"></Grid>
     </>
   );
 };

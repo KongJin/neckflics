@@ -1,16 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Div = styled.div`
-  background-image: ${({ url }) => `url(${url})`};
-  width: 200px;
-  height: 250px;
-  background-size: cover;
+const Div = styled.img`
   border-radius: 5px;
+  width: 100%;
+  height: 100%;
 `;
 // styled.img``
 
-export const Poster = ({ url }) => {
-  //   console.log(url);
-  return <Div url={url}>"Poster"</Div>;
+export const Poster = ({ id, poster_path }) => {
+  return <Div src={`http://image.tmdb.org/t/p/original/${poster_path}`}></Div>;
 };
