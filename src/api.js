@@ -24,18 +24,18 @@ export const movieApi = {
     return results;
   },
   detail: async (id) => {
-    const { results } = await fetch(
+    return await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=da53fde37465a3704f99326877a0885f`
     ).then((res) => res.json());
-    return results;
   },
   search: async (term) => {
     const { results } = await fetch(
-      `https://api.themoviedb.org/3/movie?api_key=da53fde37465a3704f99326877a0885f&query=${term}`
+      `https://api.themoviedb.org/3/search/movie?api_key=da53fde37465a3704f99326877a0885f&query=${term}`
     ).then((res) => res.json());
     return results;
   },
 };
+
 export const tvApi = {
   topRated: async () => {
     const { results } = await fetch(
@@ -55,14 +55,15 @@ export const tvApi = {
     ).then((res) => res.json());
     return results;
   },
+
   detail: async (id) => {
     return await fetch(
-      `https://api.themoviedb.org/3/tv/${id}?$api_key=da53fde37465a3704f99326877a0885f`
+      `https://api.themoviedb.org/3/tv/${id}?api_key=da53fde37465a3704f99326877a0885f`
     ).then((res) => res.json());
   },
   search: async (term) => {
     const { results } = await fetch(
-      `https://api.themoviedb.org/3/tv?api_key=da53fde37465a3704f99326877a0885f&query=${term}`
+      `https://api.themoviedb.org/3/search/tv?api_key=da53fde37465a3704f99326877a0885f&query=${term}`
     ).then((res) => res.json());
     return results;
   },

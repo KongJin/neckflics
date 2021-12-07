@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Sinput = styled.input`
@@ -7,6 +7,17 @@ const Sinput = styled.input`
   padding: 0px 10px;
 `;
 
-export const Search = () => {
-  return <Sinput type="text" placeholder="Search movies or tv ..."></Sinput>;
+export const Search = ({ search, handle }) => {
+  return (
+    <Sinput
+      type="text"
+      placeholder="Search movies or tv ..."
+      onKeyUp={(e) => {
+        if (e.key === "Enter") {
+          handle();
+        }
+      }}
+      onChange={(e) => search(e.target.value)}
+    ></Sinput>
+  );
 };
